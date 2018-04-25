@@ -1,0 +1,76 @@
+package de.david.dhbw.semester2.laufs.übungsblatt3;
+
+import javax.swing.*;
+import java.awt.*;
+
+public class Aufgabe2 {
+
+    public static void main(String[] args) {
+
+        GraphicsEnvironment env = GraphicsEnvironment.getLocalGraphicsEnvironment();
+        String[] fontNames = env.getAvailableFontFamilyNames();
+
+        UIManager.LookAndFeelInfo[] lookAndFeelInfos =
+                UIManager.getInstalledLookAndFeels();
+        String[] lookandfeelClassNames = new String[lookAndFeelInfos.length];
+        for (int i = 0; i < lookAndFeelInfos.length; i++) {
+            lookandfeelClassNames[i] = lookAndFeelInfos[i].getClassName();
+        }
+
+        JFrame frame = new JFrame("Select Font and LookAndFeel");
+        frame.setSize(500, 300);
+
+
+        //MidPanel
+        String text = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.   \n" +
+                "\n" +
+                "Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet";
+        JTextArea ta = new JTextArea(text);
+        ta.setLineWrap(true);
+        ta.setFont(new Font(fontNames[0], Font.PLAIN, 12));
+        ta.setSize(500, 300);
+        ta.setWrapStyleWord(true);
+        ta.setVisible(true);
+
+        JScrollPane midPanel = new JScrollPane(ta);
+        midPanel.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+
+        //top
+        JPanel topPanel = new JPanel();
+
+        JComboBox<String> fontComboBox = new JComboBox<String>();
+        JLabel l_text = new JLabel("Schrift: " + fontNames[0] + " 12 pt");
+        fontComboBox.setModel(new DefaultComboBoxModel<>(fontNames));
+        fontComboBox.addItemListener(iel -> {
+            ta.setFont(new Font((String) iel.getItem(), Font.PLAIN, 12));
+            l_text.setText("Schrift: " + (String) iel.getItem() + " 12 pt");
+        });
+
+        JComboBox<String> lookandfeelComboBox = new JComboBox<String>();
+        lookandfeelComboBox.setModel(new DefaultComboBoxModel<>(lookandfeelClassNames));
+        lookandfeelComboBox.addItemListener(iel -> {
+            try {
+                UIManager.setLookAndFeel((String)iel.getItem());
+                SwingUtilities.updateComponentTreeUI(frame);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+
+        topPanel.add(fontComboBox, BorderLayout.CENTER);
+        topPanel.add(lookandfeelComboBox, BorderLayout.CENTER);
+        topPanel.add(l_text, BorderLayout.CENTER);
+
+
+        frame.setLayout(new BorderLayout());
+
+        frame.add(topPanel, BorderLayout.NORTH);
+        frame.add(midPanel);
+
+        frame.setVisible(true);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        frame.pack();
+
+    }
+}
