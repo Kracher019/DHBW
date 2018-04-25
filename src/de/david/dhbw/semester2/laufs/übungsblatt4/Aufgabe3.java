@@ -2,7 +2,6 @@ package de.david.dhbw.semester2.laufs.übungsblatt4;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionListener;
 
 public class Aufgabe3 {
 
