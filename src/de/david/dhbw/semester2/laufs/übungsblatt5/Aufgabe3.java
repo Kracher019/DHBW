@@ -12,19 +12,19 @@ public class Aufgabe3 {
 
     }
 
-    private static void errorPane() {
+    private static void errorPane(){
         JOptionPane.showConfirmDialog(null, "Eggs aren't supposed to be green", "This is an error!", JOptionPane.DEFAULT_OPTION, JOptionPane.ERROR_MESSAGE);
     }
 
-    private static void warningPane() {
+    private static void warningPane(){
         JOptionPane.showConfirmDialog(null, "Eggs aren't supposed to be green", "This is a warning!", JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE);
     }
 
-    private static void questinoPane() {
+    private static void questinoPane(){
         JOptionPane.showConfirmDialog(null, "Eggs aren't supposed to be green", "Is this a question?", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE);
     }
 
-    private static void infoPane() {
+    private static void infoPane(){
         JOptionPane.showConfirmDialog(null, "Eggs aren't supposed to be green", "This is only to kepp you informed!", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE);
     }
 }
