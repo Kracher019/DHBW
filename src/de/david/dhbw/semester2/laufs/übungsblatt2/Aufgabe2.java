@@ -21,10 +21,7 @@ public class Aufgabe2 {
         JTextField tf_nachname = new JTextField();
         JTextField tf_vorname = new JTextField();
         JButton ok = new JButton("Ok");
-
-        tf_kundennummer.getDocument().putProperty("name", "nummer");
-        tf_nachname.getDocument().putProperty("name", "nachname");
-        tf_vorname.getDocument().putProperty("name", "vorname");
+        ok.setEnabled(false);
 
         DocumentListener dl = new DocumentListener() {
 
@@ -47,9 +44,6 @@ public class Aufgabe2 {
                 if (ntext.equalsIgnoreCase("") || vtext.equalsIgnoreCase("") || nummer == 0) ok.setEnabled(false);
                 else ok.setEnabled(true);
 
-                try {
-                } catch (Exception ignored) {
-                }
             }
 
             @Override
@@ -71,9 +65,6 @@ public class Aufgabe2 {
                 if (ntext.equalsIgnoreCase("") || vtext.equalsIgnoreCase("") || nummer == 0) ok.setEnabled(false);
                 else ok.setEnabled(true);
 
-                try {
-                } catch (Exception ignored) {
-                }
             }
 
             @Override
@@ -86,7 +77,7 @@ public class Aufgabe2 {
                     String ntext = tf_nachname.getText();
                     String vtext = tf_vorname.getText();
 
-                    if(ntext.equalsIgnoreCase("") || ntext.equalsIgnoreCase("")) ok.setEnabled(false);
+                    if(ntext.equalsIgnoreCase("") || vtext.equalsIgnoreCase("")) ok.setEnabled(false);
                     else ok.setEnabled(true);
 
                 } catch (Exception ignored) {
@@ -95,8 +86,6 @@ public class Aufgabe2 {
                 if (nummer != 0) {
                     ok.setEnabled(true);
                 }
-                try {
-                }catch(Exception ignored){}
             }
         };
 

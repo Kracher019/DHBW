@@ -53,7 +53,7 @@ public class Aufgabe1 {
         top.setBorder(new EtchedBorder());
 
         //End Frame
-        frame.add(top, BorderLayout.WEST);
+        frame.add(top, BorderLayout.CENTER);
         frame.add(bottom, BorderLayout.SOUTH);
         frame.pack();
     }

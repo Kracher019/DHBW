@@ -5,7 +5,7 @@ import java.awt.*;
 
 public class Aufgabe4 {
 
-    public static Type type = Type.NULL;
+    private static Type type = Type.BORDER;
 
     public static void main(String[] args) {
         JFrame f = type.getFrame();
@@ -65,57 +65,56 @@ public class Aufgabe4 {
         Insets inset = f.getInsets();
 
         Dimension d;
-        int i = 10;
+        int i = 30;
 
         JLabel label0 = new JLabel("Label 0");
         d = label0.getPreferredSize();
         label0.setBounds(i+inset.left, (i/2)+inset.top, d.width , d.height);
-        i = i+i;
+        i = i+30;
 
         JLabel label1 = new JLabel("Label 1");
         d = label1.getPreferredSize();
         label1.setBounds(i+inset.left, (i/2)+inset.top, d.width , d.height);
-        i = i+i;
+        i = i+30;
 
         JLabel label2 = new JLabel("Label 2");
         d = label2.getPreferredSize();
         label2.setBounds(i+inset.left, (i/2)+inset.top, d.width , d.height);
-        i = i+i;
+        i = i+30;
 
         JLabel label3 = new JLabel("Label 3");
         d = label3.getPreferredSize();
         label3.setBounds(i+inset.left, (i/2)+inset.top, d.width , d.height);
-        i = i+i;
+        i = i+30;
 
         JLabel label4 = new JLabel("Label 4");
         d = label4.getPreferredSize();
         label4.setBounds(i+inset.left, (i/2)+inset.top, d.width , d.height);
-        i = i+i;
+        i = i+30;
 
         JLabel label5 = new JLabel("Label 5");
         d = label5.getPreferredSize();
         label5.setBounds(i+inset.left, (i/2)+inset.top, d.width , d.height);
-        i = i+i;
+        i = i+30;
 
         JLabel label6 = new JLabel("Label 6");
         d = label6.getPreferredSize();
         label6.setBounds(i+inset.left, (i/2)+inset.top, d.width , d.height);
-        i = i+i;
+        i = i+30;
 
         JLabel label7 = new JLabel("Label 7");
         d = label7.getPreferredSize();
         label7.setBounds(i+inset.left, (i/2)+inset.top, d.width , d.height);
-        i = i+i;
+        i = i+30;
 
         JLabel label8 = new JLabel("Label 8");
         d = label8.getPreferredSize();
         label8.setBounds(i+inset.left, (i/2)+inset.top, d.width , d.height);
-        i = i+i;
+        i = i+30;
 
         JLabel label9 = new JLabel("Label 9");
         d = label9.getPreferredSize();
         label9.setBounds(i+inset.left, (i/2)+inset.top, d.width , d.height);
-        i = i+i;
 
         cp.add(label0);
         cp.add(label1);

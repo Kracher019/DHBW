@@ -31,7 +31,7 @@ public class Aufgabe1 {
         //top
         JPanel topPanel = new JPanel();
 
-        JComboBox<String> cb = new JComboBox<String>();
+        JComboBox<String> cb = new JComboBox<>();
         JLabel l_text = new JLabel("Schrift: " + fontNames[0] + " 12 pt");
         cb.setModel(new DefaultComboBoxModel<>(fontNames));
         cb.addItemListener(iel -> {
@@ -42,8 +42,6 @@ public class Aufgabe1 {
         topPanel.add(cb, BorderLayout.CENTER);
         topPanel.add(l_text, BorderLayout.CENTER);
 
-        //midPanel.add(ta);
-
         frame.setLayout(new BorderLayout());
 
         frame.add(topPanel, BorderLayout.NORTH);
@@ -52,7 +50,7 @@ public class Aufgabe1 {
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        //frame.pack();
+        frame.pack();
 
     }
 

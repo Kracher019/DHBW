@@ -2,6 +2,7 @@ package de.david.dhbw.semester2.laufs.übungsblatt2;
 
 import javax.swing.*;
 import javax.swing.border.CompoundBorder;
+import javax.swing.border.EtchedBorder;
 import java.awt.*;
 
 public class Aufgabe3 {
@@ -15,7 +16,10 @@ public class Aufgabe3 {
         //top
         JPanel topPanel = new JPanel();
         JLabel lt_etchedBorder_l = new JLabel("EtchedBorder LOWERED");
-        JLabel lt_etchedBorder_r = new JLabel("EtchedBorder LOWRAISEDERED");
+        JLabel lt_etchedBorder_r = new JLabel("EtchedBorder RAISEDERED");
+
+        lt_etchedBorder_l.setBorder(BorderFactory.createEtchedBorder(EtchedBorder.LOWERED));
+        lt_etchedBorder_r.setBorder(BorderFactory.createEtchedBorder(EtchedBorder.RAISED, Color.RED, Color.RED));
 
 
         //LeftPanel
