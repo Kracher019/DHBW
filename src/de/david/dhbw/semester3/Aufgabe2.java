@@ -39,19 +39,45 @@ public class Aufgabe2 {
             }
 
             System.out.println("\nc)\n");
-            String str = "1._";
-            SQL = "SELECT Klausurnummer, COUNT(Note) FROM Noten WHERE Note LIKE '" + str + "' GROUP BY Klausurnummer";
+            double search = 1;
+            SQL = "SELECT Note FROM Noten WHERE Klausurnummer = " + (int) search;
+            int c1 = 0;
+            int c2 = 0;
+            int c3 = 0;
+            int c4 = 0;
+            int c5 = 0;
 
             rs = stmt.executeQuery(SQL);
             while (rs.next()) {
-                int klausurnummer = rs.getInt(1);
-                int count = rs.getInt(2);
-                System.out.println("Klausur: " + klausurnummer + " Note: " + str.replace("._", "") + " Anzahl: " + count);
+                double note = rs.getDouble(1);
+                if (1.0 <= note && note < 2.0) {
+                    c1++;
+                }
+                if (2.0 <= note && note < 3.0) {
+                    c2++;
+                }
+                if (3.0 <= note && note < 4.0) {
+                    c3++;
+                }
+                if (4.0 <= note && note < 5.0) {
+                    c4++;
+                }
+                if (5.0 <= note) {
+                    c5++;
+                }
 
             }
+            System.out.println("Notenspiegel für Klausurnummer: " + (int) search);
+            System.out.println("Note 1.0 bis unter 2.0: " + c1);
+            System.out.println("Note 2.0 bis unter 3.0: " + c2);
+            System.out.println("Note 3.0 bis unter 4.0: " + c3);
+            System.out.println("Note 4.0 bis unter 5.0: " + c4);
+            System.out.println("Note 5.0: " + c5);
+
+
 
             System.out.println("\nd)\n");
-            double search = 1;
+            search = 1;
             SQL = "UPDATE Noten SET Note = Note*1.1 WHERE Klausurnummer = " + search;
 
             int update = stmt.executeUpdate(SQL);
