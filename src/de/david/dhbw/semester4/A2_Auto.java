@@ -17,7 +17,7 @@ public class A2_Auto extends Thread {
     @Override
     public void run() {
 
-        int stayTime = (random.nextInt(5) + random.nextInt(10)) * 1000;
+        int stayTime = (2 + random.nextInt(5) + random.nextInt(8)) * 1000;
         parken();
         try {
             sleep(stayTime);
