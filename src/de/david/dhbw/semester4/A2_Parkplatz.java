@@ -12,12 +12,12 @@ class A2_Parkplatz {
         this.auto = auto;
         free = false;
         time = System.currentTimeMillis();
-        System.out.println("--> Auto Nr.: " + auto.carNumber + " parked in " + number);
+        System.out.println("--> Auto Nr.: " + auto.carNumber + " parked in " + (number + 1));
     }
 
     void verlassen() {
         long stayed = System.currentTimeMillis() - time;
-        System.out.println("<-- Auto Nr.: " + auto.carNumber + " stayed " + ((int) stayed / 1000) + " in Parkplatz: " + number);
+        System.out.println("<-- Auto Nr.: " + auto.carNumber + " stayed " + ((int) stayed / 1000) + " in Parkplatz: " + (number + 1));
         auto = null;
         free = true;
     }
